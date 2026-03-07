@@ -1185,7 +1185,7 @@
     const classTime = document.getElementById('classTime').value || 'Date';
     const message = document.getElementById('message').value || '';
 
-    const text = encodeURIComponent(`Hi! I'd like to book a class at The Little Picasso Art Studio.\n\nParent Name: ${parentName}\nChild Name: ${childName}\nChild Age: ${childAge}\nPreferred Date: ${classTime}\n${message ? 'Notes: ' + message : ''}`);
+    const text = encodeURIComponent(`📞 +44 7456 519097\n\nHi! I'd like to book a class at The Little Picasso Art Studio.\n\nParent Name: ${parentName}\nChild Name: ${childName}\nChild Age: ${childAge}\nPreferred Date: ${classTime}\n${message ? 'Notes: ' + message : ''}`);
 
     window.open(`https://wa.me/447456519097?text=${text}`, '_blank');
 
@@ -1196,9 +1196,11 @@
   }
 
   function bookClass(date, time) {
-    const message = encodeURIComponent(`Hi! I'd like to book a class on ${date} ${time} at The Little Picasso Art Studio.`);
+    const message = encodeURIComponent(`📞 +44 7456 519097\n\nHi, I came across The Little Picasso Art Studio and I'd like to book a spot for my child on ${date}, ${time}. Could you please confirm availability?`);
     window.open(`https://wa.me/447456519097?text=${message}`, '_blank');
   }
+
+  window.history.scrollRestoration = 'manual';
 </script>
 </body>
 
