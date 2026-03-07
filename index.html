@@ -1167,7 +1167,7 @@
     </section>
 
     <footer>
-        <p>© 2026 The Little Picasso Art Studio · Graham Park, Colindale, London · Made with ❤️ for young artists</p>
+        <p>© 2026 The Little Picasso Art Studio · London · Made with ❤️ for young artists</p>
     </footer>
 
     <script>
@@ -1193,7 +1193,6 @@
         }
     </script>
     <script>
-  // replace everything in here with this:
   function handleSubmit(e) {
     e.preventDefault();
     const parentName = document.getElementById('parentName').value || 'Parent Name';
@@ -1210,6 +1209,17 @@
     btn.textContent = '✓ Opening WhatsApp...';
     btn.style.background = '#25D366';
     setTimeout(() => { btn.textContent = 'Send Enquiry →'; btn.style.background = ''; }, 3000);
+  }
+
+  function bookClass(date, time) {
+    const message = encodeURIComponent(`Hi! I'd like to book a class on ${date} ${time} at The Little Picasso Art Studio.`);
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+    if (isMobile) {
+      window.open(`https://wa.me/447456519097?text=${message}`, '_blank');
+    } else {
+      alert(`📞 Call or WhatsApp us to book your spot!\n\n+44 7456 519097\n\nMention: ${date} ${time}`);
+    }
   }
 </script>
 </body>
