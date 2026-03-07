@@ -838,7 +838,7 @@
 
     <div class="stats">
         <div class="stat">
-            <div class="stat-num">6<span>+</span></div>
+            <div class="stat-num">6+<span>years</span></div>
             <div class="stat-label">Professionally Trained · Govt of India Certified in Fine Arts</div>
         </div>
         <div class="stat">
@@ -1088,7 +1088,7 @@
             </div>
             <div class="testimonial-card">
                 <div class="stars">★★★★★</div>
-                <p class="testimonial-text">If your child likes art — this is a really fantastic little class! Kaylee
+                <p class="testimonial-text">If your child likes art — this is a really fantastic little class! My daughter
                     has just started and loves it. Highly recommend to any parent looking for a creative outlet for
                     their little one.</p>
                 <div class="testimonial-author">
@@ -1109,17 +1109,11 @@
             <p class="section-sub">Reach out directly via WhatsApp or email, or fill in the form and I'll get back to
                 you within 24 hours.</p>
             <div class="contact-methods">
-                <a href="https://wa.me/447456519097" class="contact-btn whatsapp" target="_blank">
-                    <span class="contact-btn-icon">💬</span>
-                    Chat on WhatsApp
-                </a>
-                <a href="mailto:madhukn0191@gmail.com?subject=Booking%20for%20class%20%7C%20Child%20Name%20%7C%20Parent%20Name%20%7C%20Age%20%7C%20Date%20%7C%20Time"
-                    class="contact-btn gmail">
-                    <span class="contact-btn-icon">✉️</span>
-                    Send us an Email
-                </a>
-
-            </div>
+  <a href="https://wa.me/447456519097" class="contact-btn whatsapp" target="_blank">
+    <span class="contact-btn-icon">💬</span>
+    Chat on WhatsApp
+  </a>
+</div>
         </div>
         <form class="contact-form" onsubmit="handleSubmit(event)">
             <div class="form-row">
@@ -1194,6 +1188,26 @@
             window.scrollTo(0, 0);
         }
     </script>
+    <script>
+  // replace everything in here with this:
+  function handleSubmit(e) {
+    e.preventDefault();
+    const parentName = document.getElementById('parentName').value || 'Parent Name';
+    const childName = document.getElementById('childName').value || 'Child Name';
+    const childAge = document.getElementById('childAge').value || 'Age';
+    const classTime = document.getElementById('classTime').value || 'Date';
+    const message = document.getElementById('message').value || '';
+
+    const text = encodeURIComponent(`Hi! I'd like to book a class at The Little Picasso Art Studio.\n\nParent Name: ${parentName}\nChild Name: ${childName}\nChild Age: ${childAge}\nPreferred Date: ${classTime}\n${message ? 'Notes: ' + message : ''}`);
+
+    window.open(`https://wa.me/447456519097?text=${text}`, '_blank');
+
+    const btn = e.target.querySelector('.form-submit');
+    btn.textContent = '✓ Opening WhatsApp...';
+    btn.style.background = '#25D366';
+    setTimeout(() => { btn.textContent = 'Send Enquiry →'; btn.style.background = ''; }, 3000);
+  }
+</script>
 </body>
 
 </html>
