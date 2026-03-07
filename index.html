@@ -1170,23 +1170,7 @@
         <p>© 2026 The Little Picasso Art Studio · London · Made with ❤️ for young artists</p>
     </footer>
 
-    <script>
-        function handleSubmit(e) {
-            e.preventDefault();
-            const parentName = document.getElementById('parentName').value || 'Parent Name';
-            const childName = document.getElementById('childName').value || 'Child Name';
-            const childAge = document.getElementById('childAge').value || 'Age';
-            const classTime = document.getElementById('classTime').value || 'Date & Time';
-            const message = document.getElementById('message').value || '';
-            const subject = encodeURIComponent(`Booking for class | ${childName} | ${parentName} | ${childAge} | ${classTime}`);
-            const body = encodeURIComponent(`Hi,\n\nI would like to book a class at The Little Picasso Art Studio.\n\nParent Name: ${parentName}\nChild Name: ${childName}\nChild Age: ${childAge}\nPreferred Date & Time: ${classTime}\n${message ? '\nAdditional notes: ' + message : ''}\n\nThank you!`);
-            window.location.href = `mailto:madhukn0191@gmail.com?subject=${subject}&body=${body}`;
-            const btn = e.target.querySelector('.form-submit');
-            btn.textContent = '✓ Opening your email app...';
-            btn.style.background = '#7c9e87';
-            setTimeout(() => { btn.textContent = 'Send Enquiry →'; btn.style.background = ''; }, 3000);
-        }
-    </script>
+    
     <script>
         window.onbeforeunload = function () {
             window.scrollTo(0, 0);
