@@ -322,6 +322,7 @@
         }
 
         .gallery-item {
+              overflow: hidden; 
             border-radius: 16px;
             aspect-ratio: 1;
             position: relative;
@@ -362,6 +363,14 @@
         .gallery-item:hover {
             transform: scale(1.02);
         }
+
+        .gallery-item img {
+  transition: transform 0.4s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.08);
+}
 
         .gallery-label {
             position: absolute;
