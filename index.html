@@ -32,6 +32,96 @@
             overflow-x: hidden;
         }
 
+        /* CLASS PHOTOS */
+        .classphotos {
+            background: var(--dark);
+        }
+
+        .classphotos .section-title {
+            color: white;
+        }
+
+        .classphotos .section-tag {
+            color: var(--accent);
+        }
+
+        .classphotos .section-sub {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .photos-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.2rem;
+        }
+
+        .photo-item {
+            border-radius: 16px;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            background: #222;
+        }
+
+        .photo-item.portrait {
+            aspect-ratio: 3/4;
+        }
+
+        .photo-item.landscape {
+            aspect-ratio: 16/9;
+            grid-column: span 2;
+        }
+
+        .photo-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: rotate(-1deg) scale(1.05);
+            transition: transform 0.4s ease, filter 0.4s ease;
+            filter: brightness(0.92);
+        }
+
+        .photo-item:nth-child(even) img {
+            transform: rotate(1deg) scale(1.05);
+        }
+
+        .photo-item:hover img {
+            transform: rotate(0deg) scale(1.12);
+            filter: brightness(1);
+        }
+
+        .photo-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+            padding: 1.5rem 1rem 1rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .photo-item:hover .photo-overlay {
+            opacity: 1;
+        }
+
+        .photo-overlay span {
+            color: white;
+            font-size: 0.82rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        @media (max-width: 768px) {
+            .photos-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .photo-item.landscape {
+                grid-column: span 2;
+            }
+        }
+
         nav {
             position: fixed;
             top: 0;
@@ -819,16 +909,19 @@
 <body>
 
     <nav>
+
         <a href="#" class="nav-logo">
             <div class="studio-name">The Little <span>Picasso</span> Art Studio</div>
             <div class="studio-location">📍 Colindale</div>
         </a>
         <ul class="nav-links">
             <li><a href="#about">About</a></li>
+            <li><a href="#classphotos">Class Photos</a></li>
             <li><a href="#gallery">Gallery</a></li>
             <li><a href="#classes">Classes</a></li>
             <li><a href="#events">Events</a></li>
             <li><a href="#contact">Contact</a></li>
+
         </ul>
         <a href="#contact" class="nav-cta">Book a Class</a>
     </nav>
@@ -844,6 +937,54 @@
             <a href="#gallery" class="btn-secondary">View My Work</a>
         </div>
     </section>
+
+    <section class="classphotos" id="classphotos">
+  <div class="section-header">
+    <span class="section-tag">In The Studio</span>
+    <h2 class="section-title">Little Artists at Work 🎨</h2>
+    <p class="section-sub">A peek inside our classes — where creativity comes alive!</p>
+  </div>
+  <div class="photos-grid">
+
+    <!-- 5 Portrait photos -->
+    <div class="photo-item portrait">
+      <img src="/ClassPhoto5.JPG" alt="Art class photo 1" />
+      <div class="photo-overlay"><span>Creating magic 🎨</span></div>
+    </div>
+
+    <div class="photo-item portrait">
+      <img src="/ClassPhoto6.JPG" alt="Art class photo 2" />
+      <div class="photo-overlay"><span>Little hands, big art ✨</span></div>
+    </div>
+
+    <div class="photo-item portrait">
+      <img src="/ClassPhoto3.JPG" alt="Art class photo 3" />
+      <div class="photo-overlay"><span>Every stroke counts 🖌️</span></div>
+    </div>
+
+    <div class="photo-item portrait">
+      <img src="/ClassPhoto4.JPG" alt="Art class photo 4" />
+      <div class="photo-overlay"><span>Proud little Picassos 🌟</span></div>
+    </div>
+
+    <div class="photo-item portrait">
+      <img src="/ClassPhoto8.JPG" alt="Art class photo 6" />
+      <div class="photo-overlay"><span>Future artists 🎭</span></div>
+    </div>
+
+    <!-- 2 Landscape photos -->
+    <div class="photo-item landscape">
+      <img src="/ClassPhoto1.JPG" alt="Art class group photo 1" />
+      <div class="photo-overlay"><span>Art in progress 🎨</span></div>
+    </div>
+
+    <div class="photo-item landscape">
+      <img src="/ClassPhoto2.JPG" alt="Art class group photo 2" />
+      <div class="photo-overlay"><span>Our wonderful class 💛 </span></div>
+    </div>
+
+  </div>
+</section>
 
     <div class="stats">
         <div class="stat">
