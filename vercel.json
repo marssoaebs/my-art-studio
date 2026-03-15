@@ -3,11 +3,17 @@
   "builds": [
     { "src": "index.html", "use": "@vercel/static" },
     { "src": "sitemap.xml", "use": "@vercel/static" },
-    { "src": "*.JPG", "use": "@vercel/static" }
+    { "src": "*.JPG", "use": "@vercel/static" },
+    { "src": "*.jpg", "use": "@vercel/static" },
+    { "src": "*.jpeg", "use": "@vercel/static" },
+    { "src": "*.JPEG", "use": "@vercel/static" }
   ],
   "routes": [
     { "src": "/sitemap.xml", "dest": "/sitemap.xml" },
     { "src": "/(.*)\\.JPG", "dest": "/$1.JPG" },
+    { "src": "/(.*)\\.jpg", "dest": "/$1.jpg" },
+    { "src": "/(.*)\\.jpeg", "dest": "/$1.jpeg" },
+    { "src": "/(.*)\\.JPEG", "dest": "/$1.JPEG" },
     { "src": "/(.*)", "dest": "/index.html" }
   ]
 }
